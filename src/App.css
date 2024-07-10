@@ -1,38 +1,108 @@
-.App {
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root, .App {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  height: 6vh;
+  text-align: center;
+  background-color:#007BFF;
+  color: white;
+  margin: 0;
+  padding: 2vh;
+  font-size: 4vh;
+}
+
+.main-container {
+  height: calc(88vh);
+  background-color: #97c7f9;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1vh 3% 1vh 3%;
+}
+
+.search-container {
+  flex: 1; /* Take up 1 part of the container */
+  padding-right: 5%;
+}
+
+.weather-container {
+  flex: 2; /* Take up 2 parts of the container, making it larger */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.current-weather {
+  background-color: #3f51b5;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.current-weather img {
+  width: 60px;
+  height: 60px;
+}
+
+.current-weather h2,
+.current-weather p {
+  margin: 5px 0;
+}
+
+.forecast-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.forecast-container > div {
+  background-color: #78909c;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.forecast-container > div img {
+  width: 40px;
+  height: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/* Add additional styling for input and button in SearchBar */
+input[type="text"], input[type="email"]{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
   color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+  background-color: #0056b3;
 }
