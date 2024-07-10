@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import SearchForm from './components/SearchForm';
 import ForecastContainer from './components/ForecastContainer';
 import SubscriptionForm from './components/SubscriptionForm';
+import SearchHistory from './components/SearchHistory';
 import './App.css';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <div className="search-container">
           <SearchForm onSearch={handleSearch} />
           <SubscriptionForm />
+          <SearchHistory onSearch={handleSearch} />
         </div>
 
         <div className="weather-container">
@@ -56,7 +58,11 @@ function App() {
               </div>
             </div>
           )}
-          <ForecastContainer forecast={forecast} loadMore={loadMore} canLoadMore={visibleDays < allForecast.length} />
+          <ForecastContainer 
+              forecast={forecast} loadMore={loadMore} 
+              canLoadMore={visibleDays < allForecast.length} 
+              visibleDays={Math.min(visibleDays, allForecast.length)}
+              />
         </div>
       </div>
     </div>

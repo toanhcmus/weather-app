@@ -107,3 +107,37 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+.search-history-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-history-card {
+  background-color: #78909c;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.search-history-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-history-card button {
+  padding: 5px 10px;
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.search-history-card button:hover {
+  background-color: #0277bd;
+}
