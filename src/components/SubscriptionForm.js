@@ -6,7 +6,7 @@ function SubscriptionForm() {
 
   const handleSubscribe = async () => {
     try {
-      const response = await fetch('http://localhost:5000/user/subscribe', {
+      const response = await fetch(`${process.env.REACT_APP_SERVER}/user/subscribe`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ function SubscriptionForm() {
 
   const handleUnsubscribe = async () => {
     try {
-      const response = await fetch('http://localhost:5000/user/unsubscribe', {
+      const response = await fetch(`${process.env.REACT_APP_SERVER}/user/unsubscribe`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
