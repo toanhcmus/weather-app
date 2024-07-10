@@ -12,15 +12,13 @@ function App() {
 
   const handleSearch = async (city) => {
     try {
-
-      const response = await fetch(`${process.env.REACT_APP_SERVER}/weather/current/${city}`);
-      const data = await response.json();
-      setCurrentWeather(data);
-
       const forecastResponse = await fetch(`${process.env.REACT_APP_SERVER}/weather/forecast/${city}`);
       const forecastData = await forecastResponse.json();
-      setAllForecast(forecastData);
-      setForecast(forecastData.slice(0, 4));
+      console.log(forecastData);
+      setCurrentWeather(forecastData.currentWeather);
+
+      setAllForecast(forecastData.forecast);
+      setForecast(forecastData.forecast.slice(0, 4));
       setVisibleDays(4);
     } catch (error) {
       console.error('Error fetching weather data', error);
@@ -53,7 +51,7 @@ function App() {
                 <p>Humidity: {currentWeather.humidity}%</p>
               </div>
               <div>
-                <img src={currentWeather.icon} alt="weather icon" />
+                <img src={currentWeather.img} alt="weather icon" />
                 <p>{currentWeather.condition}</p>
               </div>
             </div>

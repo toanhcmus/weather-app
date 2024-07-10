@@ -2,6 +2,7 @@ body, html {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #97c7f9;
 }
 
 #root, .App {
@@ -20,8 +21,8 @@ body, html {
 }
 
 .main-container {
-  height: calc(88vh);
-  background-color: #97c7f9;
+  height: 100%;
+  
   display: flex;
   flex-direction: row;
   justify-content: space-between;
