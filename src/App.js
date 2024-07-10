@@ -12,12 +12,12 @@ function App() {
 
   const handleSearch = async (city) => {
     try {
-      console.log(city);
-      const response = await fetch(`http://localhost:5000/weather/current/${city}`);
+
+      const response = await fetch(`${process.env.REACT_APP_SERVER}/weather/current/${city}`);
       const data = await response.json();
       setCurrentWeather(data);
 
-      const forecastResponse = await fetch(`http://localhost:5000/weather/forecast/${city}`);
+      const forecastResponse = await fetch(`${process.env.REACT_APP_SERVER}/weather/forecast/${city}`);
       const forecastData = await forecastResponse.json();
       setAllForecast(forecastData);
       setForecast(forecastData.slice(0, 4));

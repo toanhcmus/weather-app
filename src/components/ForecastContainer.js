@@ -7,6 +7,7 @@ function ForecastContainer({ forecast, loadMore, canLoadMore }) {
     <div>
       <h3>4-Day Forecast</h3>
       <div className="forecast-container">
+        
         {forecast.map(day => <ForecastCard key={day.date} day={day} />)}
       </div>
       {canLoadMore && <button onClick={loadMore}>Load More</button>}
