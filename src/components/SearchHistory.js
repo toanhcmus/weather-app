@@ -8,7 +8,7 @@ const fetchHistory = async () => {
     try {
     const response = await fetch(`${process.env.REACT_APP_SERVER}/weather/search-history`);
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     setHistory(data);
     } catch (error) {
     console.error('Error fetching search history:', error);

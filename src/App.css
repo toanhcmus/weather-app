@@ -16,18 +16,19 @@ body, html {
   background-color:#007BFF;
   color: white;
   margin: 0;
-  padding: 2vh;
-  font-size: 4vh;
+  font-size: 1.5em; /* Changed from 1pem to 1.5em */
+  width: 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .main-container {
   height: 100%;
-  
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 1vh 3% 1vh 3%;
+  padding: 1vh 3%;
 }
 
 .search-container {
@@ -48,6 +49,7 @@ body, html {
   border-radius: 10px;
   padding: 20px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
@@ -64,7 +66,7 @@ body, html {
 
 .forecast-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
   gap: 10px;
 }
 
@@ -81,8 +83,6 @@ body, html {
   height: 40px;
 }
 
-
-/* Add additional styling for input and button in SearchBar */
 input[type="text"], input[type="email"]{
   width: 100%;
   padding: 10px;
@@ -124,6 +124,7 @@ button:hover {
 
 .search-history-info {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
@@ -140,4 +141,47 @@ button:hover {
 
 .search-history-card button:hover {
   background-color: #0277bd;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-container {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .weather-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .current-weather {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .forecast-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjusted for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 1.2em;
+  }
+
+  .current-weather img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .forecast-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Further adjustment for very small screens */
+  }
 }
